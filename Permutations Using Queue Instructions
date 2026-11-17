@@ -1,0 +1,39 @@
+package lab_exam1;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.LinkedList;
+
+public class Permutations_Using_Queue<T> {
+	
+	private static int count = 0;
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Queue<String> queue = new LinkedList<>();
+		
+		//queue
+		System.out.print("Enter five elements: ");
+		for (int i = 1; i <= 5; i++) {
+			queue.add(sc.next().trim());
+		}
+		
+		System.out.println("\nQueue: " + queue);
+		
+		System.out.println("\nDequeueing two elements..");
+		for (int i=0;i<2;i++) {
+			if (queue.peek() != null && !queue.isEmpty()) {
+				queue.poll();
+			}
+		}
+		
+		System.out.println("Updated queue: ");
+		if (queue.isEmpty()) {
+			System.out.println("Queue is empty");
+			sc.close();
+			return;
+		}
+	}
+}
